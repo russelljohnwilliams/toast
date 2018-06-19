@@ -3,9 +3,23 @@
 
 .hide {
   display: none;
-
 }
 
+#inputArea{
+  float: right;
+  margin-top:  10vh;
+  margin-right: 15vw;
+  border: 1px solid black;
+  width: 25vw;
+  height: 50vh;
+}
+
+
+
+#output{
+  letter-spacing: 0.5rem;
+  font-size: xx-large;
+}
 
 #gallowsBeam, #gallowsNoose, #gallowsNooseCircle, #gallowsMast, #gallowsFloor, #head, #hair, #eyeLeft, #eyeRight, #mouth, #armLeft, #torso, #armRight, #legLeft, #legRight{
   height: 50px;

@@ -1,6 +1,3 @@
-
-
-
 var stringArray;
 var duplicateArray = [];
 var lives = 11
@@ -8,19 +5,41 @@ var lives = 11
 window.onload = function(){
 
   document.getElementById("startPlay").onclick = function startPlay() {
-    document.getElementById('startArea').classList.add("hide");
-    document.getElementById('gameArea').classList.remove("hide");
+ 
     setUpTheGame()
   }
 
-  document.getElementById("getText").onclick = function getText() {
-    var input = document.getElementById('field').value
-    checkInput(input)
+  document.getElementById("textInput").addEventListener("keyup", pressEnter);
+
+
+  document.getElementById("getText")
+  .onclick = function getText(){
+    makeAGuess()
   }
+
+  document.getElementById("guessInput").addEventListener("keyup", hitReturn);
+}
+
+function hitReturn() {
+  if (event.keyCode == 13){
+   makeAGuess()
+ }
+
+}function pressEnter() {
+  if (event.keyCode == 13){
+   setUpTheGame()
+ }
+}
+
+function makeAGuess(){
+  var input = document.getElementById('guessInput').value
+  checkInput(input)
 }
 
 function setUpTheGame() {
-
+   console.log("thiiiis")
+   document.getElementById('startArea').classList.add("hide");
+   document.getElementById('gameArea').classList.remove("hide");
   stringArray = document.getElementById("textInput").value.split('');
   duplicateArray = stringArray.slice(0)
   for (i = 0; i < stringArray.length; i++) {
@@ -40,12 +59,12 @@ function checkInput(input) {
   }
   checkDuplicateArray(input)
   checkIfWon()
-  document.getElementById('field').value = ''
+  document.getElementById('guessInput').value = ''
 }
 
 function checkDuplicateArray(input) {
   if (-1 != duplicateArray.indexOf(input)) {
-    var text = "Yup, that is correct"
+    var text = "Well done, that is correct"
   } else {
     var text = "Sorry, you lose a life, try again"
     loseALife()
@@ -65,22 +84,18 @@ function loseALife() {
 }
 
 function checkLives(lives) {
-  if (lives == -1) {
+  if (lives == 0) {
     gameOver()
   }
 }
 
 function displayHangman(lives){
-  // for (i = 11; i > lives; i-=1) {
-    var life = ("lives" + lives).toString()
-    // console.log("i", i) 
-    console.log("life", life) 
-    var thing = document.getElementsByClassName(life)
-    for (i = 0; i < thing.length; i++) {
+  var life = ("lives" + lives).toString()
+  console.log("life", life) 
+  var thing = document.getElementsByClassName(life)
+  for (i = 0; i < thing.length; i++) {
     thing.item(i).classList.remove("hide");
-    // console.log("display", thing.item(i))
-    }
-  // }
+  }
 }
 
 function checkIfWon() {
