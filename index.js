@@ -1,19 +1,21 @@
 var stringArray;
 var duplicateArray = [];
 var lives = 11
+var preloadedContent = ['to kill a mocking bird', 'jaws', 'where the wild things are', 'rick and morty', 'blazing saddles', 'groundhog day', 'spirited away', 'star wars', 'electric eskimo', '']
 
 window.onload = function(){
 
   document.getElementById("startPlay").onclick = function startPlay() {
- 
     setUpTheGame()
   }
 
   document.getElementById("textInput").addEventListener("keyup", pressEnter);
 
+  document.getElementById("selectRandomTitle").onclick = function selectRandomTitle() {
+    choseTitleFromArray()
+  }
 
-  document.getElementById("getText")
-  .onclick = function getText(){
+  document.getElementById("getText").onclick = function getText(){
     makeAGuess()
   }
 
@@ -36,18 +38,33 @@ function makeAGuess(){
   checkInput(input)
 }
 
-function setUpTheGame() {
-   console.log("thiiiis")
-   document.getElementById('startArea').classList.add("hide");
-   document.getElementById('gameArea').classList.remove("hide");
-  stringArray = document.getElementById("textInput").value.split('');
-  duplicateArray = stringArray.slice(0)
+function choseTitleFromArray(){
+  document.getElementById('startArea').classList.add("hide");
+  document.getElementById('gameArea').classList.remove("hide");
+  var randomNumber = Math.floor(Math.random()*preloadedContent.length)
+  stringArray = preloadedContent[randomNumber].split('');
+  duplicateArray =  stringArray.slice(0)
+  console.log('log:',  stringArray)
   for (i = 0; i < stringArray.length; i++) {
-    if (stringArray[i] != ' ') {
-      duplicateArray[i] = "_"
-    }
+   if (stringArray[i] != ' ') {
+     duplicateArray[i] = "_"
+   }
+}
+document.getElementById('output').innerHTML = duplicateArray.join('')
+}
+
+function setUpTheGame() {
+ document.getElementById('startArea').classList.add("hide");
+ document.getElementById('gameArea').classList.remove("hide");
+ stringArray = document.getElementById("textInput").value.split('');
+ duplicateArray = stringArray.slice(0)
+ console.log('log:',  stringArray)
+ for (i = 0; i < stringArray.length; i++) {
+  if (stringArray[i] != ' ') {
+    duplicateArray[i] = "_"
   }
-  document.getElementById('output').innerHTML = duplicateArray.join('')
+}
+document.getElementById('output').innerHTML = duplicateArray.join('')
 }
 
 function checkInput(input) {
@@ -83,11 +100,8 @@ function loseALife() {
   displayHangman(lives)
 }
 
-
-
 function displayHangman(lives){
   var life = ("lives" + lives).toString()
-  console.log("life", life) 
   var thing = document.getElementsByClassName(life)
   for (i = 0; i < thing.length; i++) {
     thing.item(i).classList.remove("hide");
@@ -105,7 +119,6 @@ function checkIfWon() {
     if (-1 == duplicateArray.indexOf("_")) {
       var text = "Yeah! You won!!!"
       displayText(text)
-
     }
   }
 }
