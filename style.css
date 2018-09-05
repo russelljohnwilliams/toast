@@ -5,16 +5,67 @@
   display: none;
 }
 
+#headerText, #message{
+  /*font-family: 'Raleway Dots', sans-serif;*/
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  margin: 20px 0
+}
+
+#output, #livesLeft{
+  font-family: 'Raleway dots', sans-serif;
+  font-size: 2rem;
+  margin: 20px;
+}
+
+#message, #livesLeft{
+  font-size: 1.7rem;
+}
+
 #inputArea{
+  text-align: center;
   float: right;
-  margin-top:  10vh;
-  margin-right: 15vw;
+  margin-top:  8vh;
+  margin-right: 8vw;
   border: 1px solid black;
-  width: 25vw;
-  height: 50vh;
+  width: 30vw;
+  height: 75vh;
+  padding: 25px;
+  background-color: #FFBC42 ;
+  border-radius: 5px;
+  border: none;
+}
+
+button{
+  margin-top: 20px; 
+  border: none;
+  background-color: #218380;
+  border-radius: 25px;
+  min-width: 170px;
+  padding: 10px 30px;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 5px;
 }
 
 
+input{
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  height: 40px;
+  width: calc(90% - 50px);
+  padding: 0 20px;
+  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+input:focus { 
+    background-color: none;
+    outline: none;
+}
 
 #output{
   letter-spacing: 0.5rem;
@@ -30,9 +81,10 @@
 /*colours*/
 
 #gallowsBeam, #gallowsMast, #gallowsFloor{
-  border: solid #272625 5px;
+  border: solid #272625 10px;
   background-color: #754F44;
   border-radius: 10px;
+  background-color: #4d3a1c;
 }
 
 #gallowsBeam{
@@ -149,9 +201,9 @@
   left: 500px;
   height: 175px;
   width: 110px;
-  border-radius: 35px 35px 5px 5px;
-  border: solid grey 10px;
-  background: lightblue;
+  border-radius: 40px 40px 10px 10px;
+  border: solid #3F4B3B 10px;
+  background: #8FBC94;
   -webkit-animation-name: torsoSway; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
@@ -241,7 +293,7 @@
   z-index: 10;
   height: 170px;
   width: 40px;
-  background-color: #AACD6E;
+  background-color: #263959;
   border-radius: 0 0 15px 15px;
   border: none;
   top: 400px;

@@ -83,11 +83,7 @@ function loseALife() {
   displayHangman(lives)
 }
 
-function checkLives(lives) {
-  if (lives == 0) {
-    gameOver()
-  }
-}
+
 
 function displayHangman(lives){
   var life = ("lives" + lives).toString()
@@ -98,11 +94,18 @@ function displayHangman(lives){
   }
 }
 
+function checkLives(lives) {
+  if (lives == 0) {
+    gameOver()
+  }
+}
+
 function checkIfWon() {
   for (i = 0; i < duplicateArray.length; i++) {
     if (-1 == duplicateArray.indexOf("_")) {
       var text = "Yeah! You won!!!"
       displayText(text)
+
     }
   }
 }
@@ -112,3 +115,7 @@ function gameOver() {
   var loserElement = document.getElementById("gameArea");
   loserElement.classList.add("hide");
 }
+
+
+
+
