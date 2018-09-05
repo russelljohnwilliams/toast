@@ -40,8 +40,11 @@ body{
   border: none;
 }
 
+p{
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 button{
-  margin-top: 20px; 
   border: none;
   background-color: #218380;
   border-radius: 25px;
@@ -60,9 +63,10 @@ input{
   background-color: whitesmoke;
   border-radius: 25px;
   height: 40px;
-  width: calc(90% - 50px);
+  width: calc(70% - 50px);
   padding: 0 20px;
   font-size: 1.2rem;
+  text-align: center;
   font-family: 'Raleway', sans-serif;
 }
 
