@@ -18,7 +18,7 @@ body{
 
 #output, #livesLeft{
   font-family: 'Raleway dots', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 20px;
 }
 
@@ -77,7 +77,7 @@ input:focus {
 
 #output{
   letter-spacing: 0.5rem;
-  font-size: xx-large;
+  /*font-size: xx-large;*/
 }
 
 #gallowsBeam, #gallowsNoose, #gallowsNooseCircle, #gallowsMast, #gallowsFloor, #head, #hair, #eyeLeft, #eyeRight, #mouth, #armLeft, #torso, #armRight, #legLeft, #legRight{

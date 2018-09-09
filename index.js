@@ -1,7 +1,7 @@
 var stringArray;
 var duplicateArray = [];
 var lives = 11
-var preloadedContent = ['to kill a mocking bird', 'jaws', 'where the wild things are', 'rick and morty', 'blazing saddles', 'groundhog day', 'spirited away', 'star wars', 'electric eskimo', '']
+var filmTitle
 
 window.onload = function(){
 
@@ -12,7 +12,7 @@ window.onload = function(){
   document.getElementById("textInput").addEventListener("keyup", pressEnter);
 
   document.getElementById("selectRandomTitle").onclick = function selectRandomTitle() {
-    choseTitleFromArray()
+    getFilms()
   }
 
   document.getElementById("getText").onclick = function getText(){
@@ -38,11 +38,28 @@ function makeAGuess(){
   checkInput(input)
 }
 
-function choseTitleFromArray(){
+function getFilms() {
+  var url = "https://api.myjson.com/bins/1elm6s";
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function(){
+    if (request.status === 200){
+      var jsonString = request.responseText;
+      filmSearch = JSON.parse( jsonString );
+      var randomNumber = Math.floor(Math.random()*filmSearch.movies.length)
+      console.log("length", randomNumber)
+      choseTitleFromArray(randomNumber, filmSearch.movies)
+    };
+  };
+  request.send( null );
+};
+
+function choseTitleFromArray(int, movies){
   document.getElementById('startArea').classList.add("hide");
   document.getElementById('gameArea').classList.remove("hide");
-  var randomNumber = Math.floor(Math.random()*preloadedContent.length)
-  stringArray = preloadedContent[randomNumber].split('');
+  // var randomNumber = Math.floor(Math.random()*preloadedContent.length)
+  filmTitle = filmSearch.movies[int].title.toLowerCase()
+  stringArray = filmTitle.split('');
   duplicateArray =  stringArray.slice(0)
   console.log('log:',  stringArray)
   for (i = 0; i < stringArray.length; i++) {
@@ -124,10 +141,11 @@ function checkIfWon() {
 }
 
 function gameOver() {
-  document.getElementById('livesLeft').innerHTML = "Game Over, Loser!";
+  document.getElementById('livesLeft').innerHTML = "Game Over, Loser!"+"<br>"+"The answer is"+ "<br>" + "'" + filmTitle + "'";
   var loserElement = document.getElementById("gameArea");
   loserElement.classList.add("hide");
 }
+
 
 
 
