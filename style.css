@@ -7,13 +7,14 @@
 
 body{
   background: gainsboro;
+  margin: 0;
 }
 
 #headerText, #message{
   /*font-family: 'Raleway Dots', sans-serif;*/
   font-family: 'Pacifico', cursive;
   font-size: 3.5rem;
-  margin: 20px 0
+  margin: 70px 0 35px 0;
 }
 
 #output, #livesLeft{
@@ -29,15 +30,16 @@ body{
 #inputArea{
   text-align: center;
   float: right;
-  margin-top:  8vh;
-  margin-right: 8vw;
   border: 1px solid black;
-  width: 30vw;
-  height: 75vh;
-  padding: 25px;
+  width: 40vw;
+  height: 100vh;
+  padding: 0;
   background-color: #FFBC42 ;
-  border-radius: 5px;
   border: none;
+}
+
+#selectRandomTitle{
+  margin-bottom: 20px;
 }
 
 p{
@@ -57,7 +59,6 @@ button{
   letter-spacing: 5px;
 }
 
-
 input{
   border: none;
   background-color: whitesmoke;
@@ -68,6 +69,7 @@ input{
   font-size: 1.2rem;
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  margin: 10px;
 }
 
 input:focus { 
@@ -99,30 +101,31 @@ input:focus {
   width: 300px;
   height: 35px;
   top: 5vh;
-  left: 335px;
+  left: 260px;
   border-left: #754F44;
   z-index: 5;
 }
 
 #gallowsMast{
-  height: 90vh;
+  height: 82vh;
   top: 5vh;
-  left: 300px;
+  left: 220px;
   width: 35px;
+  border-bottom: none;
 }
 
 #gallowsFloor{
   height: 35px;
   width: 500px;
-  top: 92vh;
-  left: 280px;
+  top: 87vh;
+  left: 200px;
 }
 
 #gallowsNoose{
   border: dashed #272625 5px;
   background-color: grey;
   width: 12px;
-  left: 552px;
+  left: 472px;
   top: 65px;
   box-shadow: 0 0 0 4px grey;
   border-bottom: grey solid 5px;
@@ -136,7 +139,7 @@ input:focus {
  width: 80px;
  height: 80px;
  border-radius: 100%;
- left: 520px;
+ left: 440px;
  top: 126px;
 }
 
@@ -153,7 +156,7 @@ input:focus {
   border: #272625 solid 5px;
   border-bottom: none;
   top: 220px;
-  left: 570px;
+  left: 490px;
   z-index: 50;
 }
 
@@ -161,7 +164,7 @@ input:focus {
   z-index: 50;
   border: solid #6C4F3D 10px;
   top: 120px;
-  left: 515px;
+  left: 435px;
   height: 110px;
   width: 110px;
   /*display: none;*/
@@ -196,17 +199,17 @@ input:focus {
 }
 
 #eyeLeft{
-  left: 550px;
+  left: 470px;
 }
 
 #eyeRight{
-  left: 600px;
+  left: 520px;
 }
 
 #torso{
   z-index: 20;
   top: 230px;
-  left: 500px;
+  left: 420px;
   height: 175px;
   width: 110px;
   border-radius: 40px 40px 10px 10px;
@@ -235,7 +238,7 @@ input:focus {
 #armLeft{
   z-index: 50;
   top: 255px;
-  left: 520px;
+  left: 440px;
   -webkit-animation-name: leftArmSway; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
@@ -247,7 +250,7 @@ input:focus {
 #armRight{
   z-index: 5;
   top: 260px;
-  left: 600px;
+  left: 520px;
   -webkit-animation-name: rightArmSway; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
@@ -316,11 +319,11 @@ input:focus {
 }
 
 #legLeft{
-  left: 510px;
+  left: 430px;
 }
 
 #legRight{
-  left: 560px;
+  left: 480px;
 }
 
 @-webkit-keyframes legSway {

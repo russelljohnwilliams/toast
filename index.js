@@ -6,30 +6,30 @@ var filmTitle
 window.onload = function(){
 
   document.getElementById("startPlay").onclick = function startPlay() {
-    setUpTheGame()
+    grabTitle()
   }
 
-  document.getElementById("textInput").addEventListener("keyup", pressEnter);
+  document.getElementById("textInput").addEventListener("keyup", pressEnterToSelectTextInput);
 
   document.getElementById("selectRandomTitle").onclick = function selectRandomTitle() {
     getFilms()
   }
 
-  document.getElementById("getText").onclick = function getText(){
+  document.getElementById("getText").onclick = function getTextFromGuessInput(){
     makeAGuess()
   }
 
-  document.getElementById("guessInput").addEventListener("keyup", hitReturn);
+  document.getElementById("guessInput").addEventListener("keyup", pressEnterToMakeAGuess);
 }
 
-function hitReturn() {
+function pressEnterToMakeAGuess() {
   if (event.keyCode == 13){
    makeAGuess()
  }
 
-}function pressEnter() {
+}function pressEnterToSelectTextInput() {
   if (event.keyCode == 13){
-   setUpTheGame()
+   grabTitle()
  }
 }
 
@@ -55,33 +55,32 @@ function getFilms() {
 };
 
 function choseTitleFromArray(int, movies){
-  document.getElementById('startArea').classList.add("hide");
-  document.getElementById('gameArea').classList.remove("hide");
-  // var randomNumber = Math.floor(Math.random()*preloadedContent.length)
+  hideStartingPageElements()
   filmTitle = filmSearch.movies[int].title.toLowerCase()
   stringArray = filmTitle.split('');
+  setUpTheGame(stringArray)
+}
+
+function grabTitle() {
+  hideStartingPageElements()
+  filmTitle = document.getElementById("textInput").value
+  stringArray = filmTitle.split('');
+  setUpTheGame(stringArray)
+}
+
+function setUpTheGame(stringArray) {
   duplicateArray =  stringArray.slice(0)
-  console.log('log:',  stringArray)
   for (i = 0; i < stringArray.length; i++) {
    if (stringArray[i] != ' ') {
      duplicateArray[i] = "_"
    }
-}
-document.getElementById('output').innerHTML = duplicateArray.join('')
+ }
+ document.getElementById('output').innerHTML = duplicateArray.join('')
 }
 
-function setUpTheGame() {
- document.getElementById('startArea').classList.add("hide");
- document.getElementById('gameArea').classList.remove("hide");
- stringArray = document.getElementById("textInput").value.split('');
- duplicateArray = stringArray.slice(0)
- console.log('log:',  stringArray)
- for (i = 0; i < stringArray.length; i++) {
-  if (stringArray[i] != ' ') {
-    duplicateArray[i] = "_"
-  }
-}
-document.getElementById('output').innerHTML = duplicateArray.join('')
+function hideStartingPageElements(){
+  document.getElementById('startArea').classList.add("hide");
+  document.getElementById('gameArea').classList.remove("hide");
 }
 
 function checkInput(input) {
@@ -134,10 +133,18 @@ function checkLives(lives) {
 function checkIfWon() {
   for (i = 0; i < duplicateArray.length; i++) {
     if (-1 == duplicateArray.indexOf("_")) {
-      var text = "Yeah! You won!!!"
+      var text = "Yeah! You won!!!"+"<br>"+"The answer was"+"<br>"+"'"+filmTitle+"'"
       displayText(text)
+      hideElementsWhenWon()
     }
   }
+}
+
+function hideElementsWhenWon(){
+  document.getElementById('guessInput').classList.add("hide");
+  document.getElementById('getText').classList.add("hide");
+  document.getElementById('livesLeft').classList.add("hide");
+  document.getElementById('output').classList.add("hide");
 }
 
 function gameOver() {
