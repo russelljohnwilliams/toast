@@ -2,3 +2,11 @@
   height: 100%;
   width: 100%:;
 }
+
+#comments-section{
+  width: 75%;
+  border: solid black 1px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+}
