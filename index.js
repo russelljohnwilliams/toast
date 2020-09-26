@@ -1,5 +1,7 @@
 window.onload = function(){
   getJSON();
+  callJquery()
+  getContent()
 }
 
 function getJSON() {
@@ -67,12 +69,29 @@ function loadComments(author, date, comment, id){
 }
 
 function loadReply(author, dateValues, comment, parentId, id){
-  console.log('parentNode', parentId)
   var element = document.getElementById(parentId);
-  // element.insertAdjacentHTML("afterend", "<span style='color:red'>"+author+""+parentId+"</span>"+comment+"<br>")
   element.insertAdjacentHTML("afterend", "<article class='indent' id='"+id+"'>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>")
-
-  // var text = document.createTextNode("<article>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>");  
-  // myimg.parentNode.insertBefore(text, myimg.nextSibling)
 }
+
+function callJquery(){
+  $('#carouselWrapper').on('slide.bs.carousel', function (e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $('.carousel-item').length;
+    if (idx >= totalItems-(itemsPerSlide)) {
+      var it = itemsPerSlide - (totalItems - idx);
+      for (var i=0; i<it; i++) {
+              // append slides to end
+              if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+              }
+              else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+              }
+            }
+          }
+        });
+}
+
 
