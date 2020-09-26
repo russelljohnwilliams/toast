@@ -2,7 +2,6 @@ window.onload = function(){
   getJSON();
 }
 
-
 function getJSON() {
   var url = "https://api.npoint.io/f596e1d88dbe9923af42";
   var request = new XMLHttpRequest();
@@ -20,12 +19,21 @@ function loopJSON(json){
   var entries = Object.entries(json);
   for (i = 0; i < entries.length; i++) {
     var entry = entries[i][1];
-    var comment = entry.comment;
+    var id = entries[i][0]
     var author = entry.author;
-    var date = new Date(entry.timeStamp * 1000)
-    var dateValues = getDateValues(date)
-    console.log("date", dateValues);
-    loadComments(author, dateValues, comment);
+    var date = new Date(entry.timeStamp * 1000);
+    var dateValues = getDateValues(date);
+    var comment = addComments(entry, dateValues, author, id)
+  }
+}
+
+function addComments(entry, dateValues, author, id){
+  var comment = entry.comment;
+  var parentId = entry.parentId
+  if(parentId == "none"){
+    loadComments(author, dateValues, comment, id);
+  }else{
+    loadReply(author, dateValues, comment, parentId)
   }
 }
 
@@ -53,6 +61,18 @@ function getDateValues(date){
   return dateValues
 }
 
-function loadComments(author, date, comment){
-  document.getElementById("comments-section").innerHTML += "<article>"+"<cite>"+author+"</cite><time>"+date+"</time><section>"+comment+"</section></article>";
+function loadComments(author, date, comment, id){
+  document.getElementById("comments-section").innerHTML += "<article id='"+id+"'>"+"<cite>"+author+"</cite><time>"+date+"</time><section>"+comment+"</section></article>";
+
 }
+
+function loadReply(author, dateValues, comment, parentId, id){
+  console.log('parentNode', parentId)
+  var element = document.getElementById(parentId);
+  // element.insertAdjacentHTML("afterend", "<span style='color:red'>"+author+""+parentId+"</span>"+comment+"<br>")
+  element.insertAdjacentHTML("afterend", "<article class='indent' id='"+id+"'>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>")
+
+  // var text = document.createTextNode("<article>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>");  
+  // myimg.parentNode.insertBefore(text, myimg.nextSibling)
+}
+
