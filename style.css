@@ -93,7 +93,7 @@ a:link, a:hover, a:visited , a:active{
 }
 
 .article-content{
-  margin: 50px 0;
+  margin: 50px 0 30px;
 }
 
 .article-content p{
@@ -226,17 +226,17 @@ time{
   text-align: center;
 }
 
-.contact-input{
+#contact-input{
   border: 0;
   border-bottom: 1px solid #000;
   text-align: center;
-  width: 50%;
+  width: 45%;
   padding: 10px 0;
   font-size: 13px;
   margin: 10px;
 }
 
-.contact-input-button{
+#contact-input-button{
   text-align: center;
   background: white;
   border: 0;
@@ -246,6 +246,7 @@ time{
   margin: auto;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 13px;
 }
 
 /* = = = Carousel = = =  */
@@ -294,7 +295,7 @@ time{
 
 .carousel-item{
   margin-right: 0;
-  padding: 15px;
+  padding: 25px;
 }
 
 .carousel-inner{

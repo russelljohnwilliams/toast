@@ -3,6 +3,25 @@ window.onload = function(){
   callJquery()
 }
 
+var main = function() {
+  var btn = document.getElementById('contact-input-button');
+  btn.onclick = handleClick;
+}
+
+var handleClick = function() {
+  var searchedItem = document.getElementById('contact-input')
+  console.log("wooohoooo")
+  // var userInput = searchedItem.value;
+  // searchArtists(userInput)
+};
+
+
+var searchArtists = function(userInput) {
+alert("bang bang")
+}
+
+
+
 function getJSON() {
   var url = "https://api.npoint.io/f596e1d88dbe9923af42";
   var request = new XMLHttpRequest();
@@ -66,7 +85,7 @@ function loadComments(author, date, comment, id){
   document.getElementById("comments-section").innerHTML += "<article  class='comment' id='"+id+"'>"+"<cite class='sans-serif-type'>"+author+"</cite><time class='sans-serif-type'>"+date+"</time><section class='sans-serif-type'>"+comment+"</section><div class='comment-reply-link  sans-serif-type'>reply</div></article>";
 
 }
-  
+
 function loadReply(author, date, comment, id, parentId){
   var element = document.getElementById(parentId);
   element.insertAdjacentHTML("afterend", "<article class='comment-reply indent' id='"+id+"'>"+"<cite class='sans-serif-type'>"+author+"</cite><time class='sans-serif-type'>"+date+"</time><section class='sans-serif-type'>"+comment+"</section><div class='comment-reply-link  sans-serif-type'>reply</div></article>")
@@ -81,16 +100,16 @@ function callJquery(){
     if (idx >= totalItems-(itemsPerSlide)) {
       var it = itemsPerSlide - (totalItems - idx);
       for (var i=0; i<it; i++) {
-              // append slides to end
-              if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-              }
-              else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-              }
-            }
-          }
-        });
+// append slides to end
+if (e.direction=="left") {
+  $('.carousel-item').eq(i).appendTo('.carousel-inner');
+}
+else {
+  $('.carousel-item').eq(0).appendTo('.carousel-inner');
+}
+}
+}
+});
 }
 
 
