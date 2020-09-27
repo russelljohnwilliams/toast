@@ -67,14 +67,14 @@ function loadComments(author, date, comment, id){
   document.getElementById("comments-section").innerHTML += "<article id='"+id+"'>"+"<cite>"+author+"</cite><time>"+date+"</time><section>"+comment+"</section></article>";
 
 }
-
+  
 function loadReply(author, dateValues, comment, parentId, id){
   var element = document.getElementById(parentId);
   element.insertAdjacentHTML("afterend", "<article class='indent' id='"+id+"'>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>")
 }
 
 function callJquery(){
-  $('#carouselWrapper').on('slide.bs.carousel', function (e) {
+  $('#carousel-wrapper').on('slide.bs.carousel', function (e) {
     var $e = $(e.relatedTarget);
     var idx = $e.index();
     var itemsPerSlide = 3;
