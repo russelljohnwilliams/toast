@@ -3,6 +3,12 @@ body{
   font-family: 'Vollkorn', serif;
 }
 
+a:link, a:hover, a:visited , a:active{
+  color: black;
+  text-decoration: none;
+}
+
+
 #output{
   height: 100%;
   width: 100%:;
@@ -14,25 +20,61 @@ body{
 
 /* = = = typography = = = */
 
-.sans-serif-type{
+.sans-serif-type, body input{
   font-family: 'Lato', sans-serif;
 }
 
 .article-section-tag, .article-author, .article-credits, .leave-comment-link{
   font-size: 15px;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .underlined-block{
   display: unset;
   border-bottom: solid 1px black;
+  text-transform: uppercase;
 }
-
-
 
 /* = = = article  = = = */
 
+.article-content p, .article-author, .article-credits, .article-credits{
+  margin: 20px 8%;
+}
+
+.article-content blockquote{
+  margin: 40px 15%;
+}
+
+@media (min-width: 992px) {
+  .article-content p, .article-author, .article-credits, .article-credits{
+    margin: 20px 10%;
+  }
+
+  .article-content blockquote{
+    margin: 40px 15%;
+  }
+}
+
+
+@media only screen and (min-width: 1025px){
+  .article-content p, .article-author, .article-credits, .article-credits{
+    margin: 20px 18%;
+  }
+
+  .article-content blockquote{
+    margin: 40px 25%;
+  }
+
+}
+
+#aticle-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-header{
+  margin: auto;
+}
 
 .magazine-header{
   letter-spacing: 1px;
@@ -54,10 +96,6 @@ body{
   margin: 50px 0;
 }
 
-.article-content p, .article-author, .article-credits, .article-credits{
-  margin: 20px 18%;
-}
-
 .article-content p{
   line-height: 19px;
   font-weight: lighter;
@@ -70,13 +108,9 @@ body{
   line-height: 23px;
 }
 
-.article-content blockquote{
-  margin: 40px 30%;
-}
-
 .article-content q{
   font-weight: 400;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .article-credits{
@@ -87,6 +121,13 @@ body{
 .indent{
   padding-left: 70px; 
   min-width: 100%;
+}
+
+
+/*article images*/
+
+.article-image-wrapper img{
+  width: 100%;
 }
 
 /* = = = Comment Section = = = */
@@ -134,9 +175,101 @@ time{
   margin-left: 5%;
 }
 
+
+/*social media*/
+
+#social-media-links{
+  text-align: center;
+  margin: 50px 0 35px; 
+}
+
+#social-media-links i{
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-size: contain;
+}
+
+.link-fb{
+  background: url('icons/icon-fb.png');
+
+}
+
+.link-twit{
+  background: url('icons/icon-tw.png');
+}
+
+.link-pin{
+  background: url('icons/icon-pi.png');
+}
+
+.link-tum{
+  background: url('icons/icon-tu.png');
+}
+
+.link-goog{
+  background: url('icons/icon-go.png');
+}
+
+.link-mail{
+  background: url('icons/icon-em.png');
+}
+
+/*contact form*/
+
+.contact-form-header{
+  font-size: 22px;
+}
+
+#contact-form-wrapper{
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contact-input{
+  border: 0;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  width: 50%;
+  padding: 10px 0;
+  font-size: 13px;
+  margin: 10px;
+}
+
+.contact-input-button{
+  text-align: center;
+  background: white;
+  border: 0;
+  border-bottom: 1px solid black;
+  width: auto;
+  display: block;
+  margin: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 /* = = = Carousel = = =  */
 
-#carousel-outer{
+.carousel-article{
+  background: white;
+}
+
+.carousel-article-header{
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.carousel-article p{
+  font-size: 13px;
+  margin: 0;
+}
+
+.date-posted{
+  display: inline-flex;
+  float: right;
+}
+
+#carousel-outer, .carousel{
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -147,14 +280,25 @@ time{
 }
 
 .chevron-right, .chevron-left {
-  background: url('icons/chevron-right-icon_4.svg');
+  background: url('icons/chevron-icon.svg');
   height: 40px;
   width: 40px;
   display: block;
+  background-size: contain;
+
 }
 
 .carousel-control-next, .carousel-control-prev{
   opacity: 1;
+}
+
+.carousel-item{
+  margin-right: 0;
+  padding: 15px;
+}
+
+.carousel-inner{
+  width: 200% !important;
 }
 
 @media (min-width: 768px) {
@@ -223,29 +367,9 @@ time{
     visibility: visible;
   }
 
-
   .carousel-inner{
-    width: 200%!important;
-  }
-
-  .carousel-item{
-    margin-right: 0;
-    padding: 15px;
+    /*width: 200%!important;*/
   }
 
 }
 
-@media (min-width: 992px) {
-
-  .carousel-inner{
-    width: 133%!important;
-  }
-
-
-  @media only screen and (min-width: 1025px){
-    #content-wrapper {
-      width: 1100px!important;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
