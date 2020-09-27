@@ -6,24 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&Source+Sans+Pro:wght@300;400;600&Vollkorn:wght@400;500;600&Lato:wght@300;400;700display=swap" rel="stylesheet">
+
   <title>toast</title>
 
 
 </head>
 <body>
- <div id=output>
-   <article>
-     <h3>TOAST MAGAZINE</h3>
-     <h4>Paradigm Shift | The Geodesic Dome</h4>
-     <h4> ARTS & CULTURE</h4>
+ <div id=content-wrapper>
+
+   <section id="blog-post">
+    <header class="article-header centered">
+     <h2 class="magazine-header">Toast Magazing</h1>
+     <h1 class="article-title">Paradigm Shift | The Geodesic Dome</h2>
+     <h2 class="article-section-tag sans-serif-type"><span class="underlined-block">Arts & Culture</span></h3>
+   </header>
+   <article class="article-content col-xs-12">
      <p>
      Late on a midweek evening in winter, five years ago, I came to Euston station to begin a journey from London to the most westerly point on the British mainland. The station concourse was cold but wonderfully empty; low-lit and calm in contrast with the usual daytime scurry. Dispersed commuters stood silently before the departure board while a handful in suits waited at the counters of closing delis for end-of-night stodge. I bought a few travel provisions, found my platform and, with the vast train already arrived and being loaded, followed a long row of carriages to my cabin for the night.</p>
-     <blockquote>“The dome unsurprisingly failed to rise, and was was good-naturedly termed the Supine Dome.”</blockquote>
+     <blockquote><q>The dome unsurprisingly failed to rise, and was was good-naturedly termed the the Supine Dome.</q></blockquote>
      <p>I was off to Fort William in the northwest of Scotland; the town that has for centuries served as a gateway to the Highlands and Islands. At Fort William
        I would pick up my rental car and drive on further west to Corran, catch a ferry across Loch Linnhe and continue on to the Ardnamurchan Peninsula—a finger tip of Britain pointing straight out across the ocean to America. These latter stages of the journey I apprehensively contemplated as my train left Euston in the dark; planned at the last minute I wasn’t entirely certain of their competent execution. Ferry times had been checked—but only at
        a glance—and I had been lucky to secure a hire car at such short notice. Although these were the days before Uber, Londoners tend to be guilty of assuming an ease with travel: however precarious the journey, there’s always a way to get where you want to get to, no matter how late in the day. Getting from London to Ardnamurchan, it seemed, wasn’t so straight forward. But then, why should it be?
@@ -40,63 +44,67 @@
      <p>12 hours later I emerged from the cabin into Euston in full morning swing: queues at the barriers, queues on the concourse. Though in the end (and after days of deliberation) I had to decline the job, the brief trip marked
        a first of many to the highlands of Scotland. It was an introduction to this beautiful and remote part of Britain, a part I’ve grown fond of and need little excuse to visit. I’ve since found my way there via all means of transport, recently having flown for reasons specific to timing. Travel by train however, especially through the night, is by far the most preferable should one have the option. It’s certainly the most conducive to making an escape from the city: under the cover of darkness, carried off through the night. To greet from the pillow this bewilderingly uncluttered and dramatic landscape is a fine introduction; to wake up transported into the wide and wintery northwest.
      </p>
-     <h4>WORDS BY EVA DIAZ</h4>
-     <p>Images by Western Regional Archives, State Archives of North Carolina.</p>
-
    </article>
+   <footer>
+    <h2 class="article-author sans-serif-type"><span class="underlined-block">WORDS BY EVA DIAZ</span></h3>
+     <h2 class="article-credits"><span>Images by Western Regional Archives, State Archives of North Carolina.</span></h4>
+   </footer>
 
-   <div class=comment-section-wrapper>
-    <h4>COMMENT HERE</h4>
-    <div id="comments-section" class="d-flex flex-wrap-reverse">
 
-    </div>
+ </section>
+
+ <div class="comment-section-wrapper col-11 col-md-9 col-lg-7  ">
+  <h2 class="leave-comment-link underlined-block sans-serif-type">comment here</h2>
+  <div id="comments-section" class="d-flex flex-wrap-reverse">
+
   </div>
+</div>
 
-  <form>add email stuff herer</form>
+<form>add email stuff herer</form>
 
 
-  <div id="carousel-wrapper" class="carousel slide w-100" data-ride="carousel" data-interval="10000">
+<div id="carousel-wrapper" class="carousel slide w-100" data-ride="carousel" data-interval="10000">
 
-    <div id="carousel-outer" class="w-75">
-     <div class="carousel-inner row mx-auto" role="listbox">
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3 active">
-         <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 1">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 2">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 3">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 7">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 5">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 6">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 7">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 7">
-       </div>
-       <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
-         <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 7">
-       </div>
+  <div id="carousel-outer" class="w-75">
+   <div class="carousel-inner row mx-auto" role="listbox">
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3 active">
+       <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 1">
      </div>
-     <a class="carousel-control-prev" href="#carousel-wrapper" role="button" data-slide="prev">
-       <i class="text-muted chevron-left"></i>
-       <span class="sr-only">Previous</span>
-     </a>
-     <a class="carousel-control-next text-faded" href="#carousel-wrapper" role="button" data-slide="next">
-       <i class="text-muted chevron-right"></i>
-       <span class="sr-only">Next</span>
-     </a>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 2">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 3">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 7">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 5">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 6">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel1jpg.jpg" alt="slide 7">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel2.jpg" alt="slide 7">
+     </div>
+     <div class="carousel-item col-xs-12 col-md-3 col-lg-3">
+       <img class="img-fluid mx-auto d-block" src="images/carousel3.jpg" alt="slide 7">
+     </div>
    </div>
+   <a class="carousel-control-prev" href="#carousel-wrapper" role="button" data-slide="prev">
+     <i class="text-muted chevron-left"></i>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#carousel-wrapper" role="button" data-slide="next">
+     <i class="text-muted chevron-right"></i>
+     <span class="sr-only">Next</span>
+   </a>
  </div>
+</div>
 
 
 

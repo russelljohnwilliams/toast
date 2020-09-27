@@ -1,14 +1,87 @@
+body{
+  color: black;
+  font-family: 'Vollkorn', serif;
+}
+
 #output{
   height: 100%;
   width: 100%:;
 }
 
-.comment-section-wrapper{
-  width: 75%;
-  border: solid black 1px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px;
+.centered{
+  text-align: center;
+}
+
+/* = = = typography = = = */
+
+.sans-serif-type{
+  font-family: 'Lato', sans-serif;
+}
+
+.article-section-tag, .article-author, .article-credits, .leave-comment-link{
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.underlined-block{
+  display: unset;
+  border-bottom: solid 1px black;
+}
+
+
+
+/* = = = article  = = = */
+
+
+.magazine-header{
+  letter-spacing: 1px;
+  color: black;
+  font-size: 22px;
+  margin: 30px 0 20px 0;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.article-title{
+  font-size: 19px;
+  font-weight: 400;
+  display: block;
+  margin: 30px 0 15px 0;
+}
+
+.article-content{
+  margin: 50px 0;
+}
+
+.article-content p, .article-author, .article-credits, .article-credits{
+  margin: 20px 18%;
+}
+
+.article-content p{
+  line-height: 19px;
+  font-weight: lighter;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.article-content p:first-of-type {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.article-content blockquote{
+  margin: 40px 30%;
+}
+
+.article-content q{
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.article-credits{
+  font-size: 11px;
+  /*margin: 20px 0;*/
 }
 
 .indent{
@@ -16,11 +89,52 @@
   min-width: 100%;
 }
 
-#carousel-wrapper{
-  /*overflow: hidden;*/
+/* = = = Comment Section = = = */
+
+.comment-section-wrapper{
+  border: solid black 1px;
   margin-left: auto;
   margin-right: auto;
+  padding: 50px;
 }
+
+
+.leave-comment-link{
+  font-size: 14px;
+}
+
+cite{
+  font-style: normal;
+  font-weight: 700;
+}
+
+time{
+  color: grey;
+}
+
+#comments-section{
+  font-size: 13px;
+  margin-top: 30px; 
+}
+
+#comments-section p{
+  margin: 5px 0;
+}
+
+#comments-section section{
+  font-size: 12px;
+}
+
+.comment, .comment-reply{
+  margin: 10px 0;
+}
+
+.comment-reply-link{
+  text-decoration: underline;
+  margin-left: 5%;
+}
+
+/* = = = Carousel = = =  */
 
 #carousel-outer{
   overflow: hidden;
@@ -33,11 +147,14 @@
 }
 
 .chevron-right, .chevron-left {
-    background: url('icons/chevron-right-icon_4.svg');
-    height: 40px;
-    width: 40px;
-    display: block;
-    /* Other styles here */
+  background: url('icons/chevron-right-icon_4.svg');
+  height: 40px;
+  width: 40px;
+  display: block;
+}
+
+.carousel-control-next, .carousel-control-prev{
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -125,3 +242,10 @@
   }
 
 
+  @media only screen and (min-width: 1025px){
+    #content-wrapper {
+      width: 1100px!important;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }

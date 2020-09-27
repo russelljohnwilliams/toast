@@ -1,7 +1,6 @@
 window.onload = function(){
   getJSON();
   callJquery()
-  getContent()
 }
 
 function getJSON() {
@@ -35,7 +34,7 @@ function addComments(entry, dateValues, author, id){
   if(parentId == "none"){
     loadComments(author, dateValues, comment, id);
   }else{
-    loadReply(author, dateValues, comment, parentId)
+    loadReply(author, dateValues, comment, id, parentId)
   }
 }
 
@@ -64,13 +63,13 @@ function getDateValues(date){
 }
 
 function loadComments(author, date, comment, id){
-  document.getElementById("comments-section").innerHTML += "<article id='"+id+"'>"+"<cite>"+author+"</cite><time>"+date+"</time><section>"+comment+"</section></article>";
+  document.getElementById("comments-section").innerHTML += "<article  class='comment' id='"+id+"'>"+"<cite class='sans-serif-type'>"+author+"</cite><time class='sans-serif-type'>"+date+"</time><section class='sans-serif-type'>"+comment+"</section><div class='comment-reply-link  sans-serif-type'>reply</div></article>";
 
 }
   
-function loadReply(author, dateValues, comment, parentId, id){
+function loadReply(author, date, comment, id, parentId){
   var element = document.getElementById(parentId);
-  element.insertAdjacentHTML("afterend", "<article class='indent' id='"+id+"'>"+"<cite>"+author+"</cite><time>"+dateValues+"</time><section>"+comment+"</section></article>")
+  element.insertAdjacentHTML("afterend", "<article class='comment-reply indent' id='"+id+"'>"+"<cite class='sans-serif-type'>"+author+"</cite><time class='sans-serif-type'>"+date+"</time><section class='sans-serif-type'>"+comment+"</section><div class='comment-reply-link  sans-serif-type'>reply</div></article>")
 }
 
 function callJquery(){
